@@ -15,3 +15,8 @@ The first weeks were used to carry out research and lay the groundwork for my pr
 
 - ***Week 8*** 
     - *Monday, 19:15* - Pushed my empty project to my repository together with a new created .gitignore file.
+
+<br>
+
+- ***Week 9*** 
+    - *Monday, 21:17* - Designed my own first sprite for an initial spaceship (may be subject to change) in a pixel editor. Added it to my Unity project as well as some basic code to implement left and right movement with the A and D keys.
