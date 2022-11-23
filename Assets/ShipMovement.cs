@@ -16,7 +16,7 @@ public class ShipMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementX = Input.GetAxis("Horizontal");
+        movementX = Input.GetAxisRaw("Horizontal");
     }
 
     private void FixedUpdate()
