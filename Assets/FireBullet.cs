@@ -17,5 +17,10 @@ public class FireBullet : MonoBehaviour
     void Update()
     {
         transform.position += transform.up*speed*Time.deltaTime;
+        timer -= Time.deltaTime;
+        if (timer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
