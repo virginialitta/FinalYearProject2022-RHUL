@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipMovement : MonoBehaviour
+public class Spaceship : MonoBehaviour
 {
     float movementX;
     public float movementSpeed = 5f;
@@ -24,4 +24,5 @@ public class ShipMovement : MonoBehaviour
         Vector2 movement = new Vector2(movementSpeed * movementX, rb.velocity.y);
         rb.velocity = movement;
     }
+
 }
