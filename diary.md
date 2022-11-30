@@ -37,3 +37,8 @@ The first weeks were used to carry out research and lay the groundwork for my pr
     Redesigned spaceship sprite.
 
     - *Sunday, 15:21* - Player's bullets can now kill enemies. 2 rows of enemies spawn and move like previously described, fire bullets at the player randomly and on a cooldown. Collision is handled by Unity box collider. Moving background has also been implemented. Enemies seem to "fall" through the screen sometimes, will need fixing.
+
+<br>
+
+ - ***Week 11*** 
+    - *Wednesday, 18:09* - Structured the report and wrote the following sections: Abstract, Game Overview, Methodology, Tools, Visual Design.
