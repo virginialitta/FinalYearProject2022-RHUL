@@ -42,3 +42,14 @@ The first weeks were used to carry out research and lay the groundwork for my pr
 
  - ***Week 11*** 
     - *Wednesday, 18:09* - Structured the report and wrote the following sections: Abstract, Game Overview, Methodology, Tools, Visual Design.
+
+
+<br>
+
+## **Term 2**
+
+<br>
+
+ - ***Week 23*** 
+    - *Sunday, 19:42* - Reworked the enemy movement code to make it more readable and make the moving smoother. Fixed the issues with the score not updating/displaying as well as the player spaceship not being destroyed on collision. Turns out, with the spaceship being a kinematic body, collisions were not being registered correctly; this was fixed by enabling "On Trigger" for the spaceship game object. The score was not getting updated on collision because I currently have multiple duplicated of the enemy game object, hence the score was set to 0 for all and kept resetting to that upon collision of one. This was fixed by making the score variable static. However, this enemy system will need to be changed to prefabs instead of multiple entities to simplify and to take up less memory.
+    This work was done slowly ober the course of multiple weeks as I have been busy with other modules.

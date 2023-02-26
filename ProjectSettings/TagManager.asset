@@ -6,6 +6,7 @@ TagManager:
   tags:
   - FireBullet
   - Enemy
+  - FireEnemyBullet
   layers:
   - Default
   - TransparentFX

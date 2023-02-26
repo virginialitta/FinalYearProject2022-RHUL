@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed, shootTimer, EnemyMovementDown, bulletCooldown;
+    public float speed, shootTimer, bulletCooldown;
     public GameObject bullet;
     public Transform gun1;
     public int hp;
-    public bool goingLeft;
     public float timer = 0f;
+    public static int score;
+    public float leftBound = -10.0f;
+    public float rightBound = 10.0f;
+    private bool movingRight = true;
+    public Text MyText;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,19 +31,21 @@ public class Enemy : MonoBehaviour
             Shoot();
             shootTimer = bulletCooldown;
         }
-        if (goingLeft == true)
-        {
-            transform.position -= transform.right*speed*Time.deltaTime;
-        }
 
-        else
-        {
-            transform.position += transform.right*speed*Time.deltaTime;
-        }
-        
-        if (Mathf.Abs(transform.position.x) >= 8.4)
-        {
-            EnemyMovement();
+        if (movingRight) {
+            transform.position = transform.position + new Vector3(1, 0, 0) * speed * Time.deltaTime;
+            if (transform.position.x >= rightBound) {
+                movingRight = false;
+                transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            }
+        } else {
+            transform.position = transform.position + new Vector3(-1, 0, 0) * speed * Time.deltaTime;
+            if (transform.position.x <= leftBound) {
+                movingRight = true;
+                transform.position = new Vector3(leftBound, transform.position.y, transform.position.z);
+                transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
+            }
         }
 
         timer += Time.deltaTime;
@@ -46,6 +54,8 @@ public class Enemy : MonoBehaviour
             speed *= 1.25f;
             timer = 0f;
         }
+
+        MyText.text = "Score: " + Enemy.score;
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -58,12 +68,8 @@ public class Enemy : MonoBehaviour
             {
                 Die();
             }
+            Enemy.score++;
         }
-    }
-
-    void EnemyMovement() {
-        transform.position -= transform.up*EnemyMovementDown;
-        goingLeft = !goingLeft;
     }
 
     void Shoot() 
@@ -80,4 +86,5 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }

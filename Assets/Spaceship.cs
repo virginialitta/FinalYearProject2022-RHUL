@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Spaceship : MonoBehaviour
 {
@@ -23,6 +24,14 @@ public class Spaceship : MonoBehaviour
     {
         Vector2 movement = new Vector2(movementSpeed * movementX, rb.velocity.y);
         rb.velocity = movement;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("FireEnemyBullet"))
+        {
+            Destroy(gameObject);
+        }
     }
 
 }
