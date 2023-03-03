@@ -19,7 +19,16 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Enemy.score = 0;
+        MyText.text = "Score: " + Enemy.score;
+
+    // Find the ScoreTxt canvas in the scene
+        GameObject scoreTextObject = GameObject.Find("ScoreTxt");
+        if (scoreTextObject != null) {
+            MyText = scoreTextObject.GetComponentInChildren<Text>();
+
         bulletCooldown = shootTimer;
+        }
     }
 
     // Update is called once per frame
@@ -53,9 +62,7 @@ public class Enemy : MonoBehaviour
         {
             speed *= 1.25f;
             timer = 0f;
-        }
-
-        MyText.text = "Score: " + Enemy.score;
+        }       
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -66,9 +73,11 @@ public class Enemy : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
+                Enemy.score++;
                 Die();
             }
-            Enemy.score++;
+
+            MyText.text = "Score: " + Enemy.score;
         }
     }
 

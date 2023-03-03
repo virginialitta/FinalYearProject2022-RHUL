@@ -48,8 +48,19 @@ The first weeks were used to carry out research and lay the groundwork for my pr
 
 ## **Term 2**
 
+I was not able to work on my project as much as I had wanted to during the first weeks of Term 2 due to various circumstances (working on assignments for other modules, my job, etc...). I will however carry out the rest of the work in the remaining time I have.
+
 <br>
 
  - ***Week 23*** 
     - *Sunday, 19:42* - Reworked the enemy movement code to make it more readable and make the moving smoother. Fixed the issues with the score not updating/displaying as well as the player spaceship not being destroyed on collision. Turns out, with the spaceship being a kinematic body, collisions were not being registered correctly; this was fixed by enabling "On Trigger" for the spaceship game object. The score was not getting updated on collision because I currently have multiple duplicated of the enemy game object, hence the score was set to 0 for all and kept resetting to that upon collision of one. This was fixed by making the score variable static. However, this enemy system will need to be changed to prefabs instead of multiple entities to simplify and to take up less memory.
     This work was done slowly ober the course of multiple weeks as I have been busy with other modules.
+
+
+<br>
+
+ - ***Week 24*** 
+    - *Friday, 10:13* - Implemented an enemy spawner system using prefabs instead of simply duplicating the same game object multiple times in the scene. This allows the game to spawn multiple enemies only while the game is running and delete them as soon as they are destroyed. The score system was updated accordingly to work with the new system.
+    Designed a simple start button sprite and implemented a rudimental start screen: just a background with the start button displayed, which will on click load the main scene, immediately starting a game. <br>
+    I struggled for way too long to make the score system work correctly... The problem was a very annoying combination of not having the text object as a prefab and not having that prefab linked to the correct variable. I plan to get the start screen done soon, the I will procede to implement the next levels. <br>
+    Code definitely needs more comments.
