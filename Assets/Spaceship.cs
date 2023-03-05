@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Spaceship : MonoBehaviour
 {
     float movementX;
     public float movementSpeed = 5f;
     Rigidbody2D rb; 
+    public int lives;
+    LivesManager livesManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        lives = 3;
     }
 
     // Update is called once per frame
@@ -30,7 +35,12 @@ public class Spaceship : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("FireEnemyBullet"))
         {
-            Destroy(gameObject);
+            lives--;
+            Destroy(collision.gameObject);
+            if (lives == 0) {
+                Destroy(gameObject);
+                SceneManager.LoadScene("GameOverScreen"); // Load the game over screen
+            }
         }
     }
 
