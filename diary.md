@@ -64,3 +64,6 @@ I was not able to work on my project as much as I had wanted to during the first
     Designed a simple start button sprite and implemented a rudimental start screen: just a background with the start button displayed, which will on click load the main scene, immediately starting a game. <br>
     I struggled for way too long to make the score system work correctly... The problem was a very annoying combination of not having the text object as a prefab and not having that prefab linked to the correct variable. I plan to get the start screen done soon, the I will procede to implement the next levels. <br>
     Code definitely needs more comments.
+
+    - *Sunday, 09:24*  - Implemented a lives system for the player. The player will now have 3 lives available, which will be shown as heart sprites on the bottom right of the screen. Upon detecting collision from an enemy bullet, the player will lose one life and a sprite will disappear. After losing the last life, the player spaceship is destroyed and a basic game over screen is shown. This screen features a "play again", which will restart the game scene, and a "main menu" button, which for now just loads the start screen. <br>
+    Sprites for the lives and a few power-ups have been designed and added to assets. I will next try to implement the power-up system.
