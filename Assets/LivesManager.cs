@@ -11,21 +11,40 @@ public class LivesManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         spaceship = FindObjectOfType<Spaceship>();
+        spaceship = FindObjectOfType<Spaceship>();
     }
 
     public void Update()
     {
         if (spaceship.lives == 0) {
-            Destroy(hearts[0].gameObject);
+            hearts[0].SetActive(false);
         }
 
         else if (spaceship.lives == 1) {
-            Destroy(hearts[1].gameObject);
+            hearts[1].SetActive(false);
         }
 
         else if (spaceship.lives == 2) {
-            Destroy(hearts[2].gameObject);
+            hearts[2].SetActive(false);
         }
     }
+
+    public void AddLife()
+    {
+        spaceship.lives++;
+
+        if (spaceship.lives > hearts.Length) {
+            spaceship.lives = hearts.Length;
+        }
+
+        for (int i = 0; i < hearts.Length; i++) {
+            if (i < spaceship.lives) {
+                hearts[i].SetActive(true);
+            }
+            else {
+                hearts[i].SetActive(false);
+            }
+        }
+    }
+
 }
