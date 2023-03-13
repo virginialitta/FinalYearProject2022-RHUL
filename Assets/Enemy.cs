@@ -15,12 +15,14 @@ public class Enemy : MonoBehaviour
     public float rightBound = 10.0f;
     private bool movingRight = true;
     public Text MyText;
+    public bool scoreUp;
     
     // Start is called before the first frame update
     void Start()
     {
         Enemy.score = 0;
         MyText.text = "Score: " + Enemy.score;
+
 
     // Find the ScoreTxt canvas in the scene
         GameObject scoreTextObject = GameObject.Find("ScoreTxt");
@@ -94,6 +96,11 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void ScoreUp() {
+        Enemy.score += 10;
+        MyText.text = "Score: " + Enemy.score;
     }
 
 }

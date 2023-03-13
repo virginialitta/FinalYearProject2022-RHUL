@@ -7,7 +7,8 @@ public class PowerUpSpawner : MonoBehaviour
     public GameObject shield;
     public GameObject plusone;
     public GameObject gun;
-    public float spawnInterval = 10f;
+    public GameObject score;
+    public float spawnInterval = 20f;
     public float minX = -10f;
     public float maxX = 10f;
     public float minY = -10f;
@@ -23,14 +24,14 @@ public class PowerUpSpawner : MonoBehaviour
     {
         while (true)
         {
-            float randomInterval = Random.Range(spawnInterval * 0.1f, spawnInterval * 0.5f);
+            float randomInterval = Random.Range(spawnInterval * 0.5f, spawnInterval * 1f);
             yield return new WaitForSeconds(randomInterval);
 
             float randomX = Random.Range(minX, maxX);
             float startY = maxY + 1.0f; // Spawn power-up above the screen
             Vector3 startPos = new Vector3(randomX, startY, 0);
 
-            int randomPowerUp = Random.Range(0, 3);
+            int randomPowerUp = Random.Range(0, 4);
 
             GameObject powerUpPrefab;
 
@@ -44,6 +45,9 @@ public class PowerUpSpawner : MonoBehaviour
                     break;
                 case 2:
                     powerUpPrefab = gun;
+                    break;
+                case 3:
+                    powerUpPrefab = score;
                     break;
                 default:
                     powerUpPrefab = shield;

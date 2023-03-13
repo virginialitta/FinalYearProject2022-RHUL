@@ -6,7 +6,8 @@ public enum PowerUpType
 {
     Shield,
     PlusOne,
-    TwoGuns
+    TwoGuns,
+    ScoreUp
 }
 
 public class PowerUp : MonoBehaviour
@@ -27,6 +28,8 @@ public class PowerUp : MonoBehaviour
     {
         Spaceship spaceship = player.GetComponent<Spaceship>();
         LivesManager livesmanager = GameObject.FindObjectOfType<LivesManager>();
+        ShipGuns shipguns = GameObject.FindObjectOfType<ShipGuns>();
+        Enemy enemy = GameObject.FindObjectOfType<Enemy>();
         switch (powerUpType)
         {
             case PowerUpType.Shield:
@@ -37,10 +40,14 @@ public class PowerUp : MonoBehaviour
                 // Add one life to the player
                 livesmanager.AddLife();
                 break;
-            //case PowerUpType.Gun:
+            case PowerUpType.TwoGuns:
                 // Activate gun power-up
-                //player.GetComponent<Spaceship>().AddGun();
-                //break;
+                shipguns.GunPowerUp();
+                break;
+            case PowerUpType.ScoreUp:
+                // Activate score power-up
+                enemy.ScoreUp();
+                break;
         }
     }
 }

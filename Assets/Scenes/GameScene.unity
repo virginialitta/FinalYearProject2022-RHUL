@@ -833,6 +833,7 @@ MonoBehaviour:
   shield: {fileID: 4107150030609790759, guid: 7cf50c7fa195783429f768edcf796eed, type: 3}
   plusone: {fileID: 1275673060340732899, guid: c46caaa43027fc84abe769f30189b419, type: 3}
   gun: {fileID: 690309990827765823, guid: 9d570c8248d6d35498b7a52857c08f10, type: 3}
+  score: {fileID: 4535188454885019749, guid: a5d5415d5f6364645bd7766c486faf98, type: 3}
   spawnInterval: 10
   minX: -10
   maxX: 10
@@ -976,6 +977,8 @@ Transform:
   m_Children:
   - {fileID: 1364563867}
   - {fileID: 630541598}
+  - {fileID: 1771725285}
+  - {fileID: 1963818799}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -994,6 +997,9 @@ MonoBehaviour:
   bulletCooldown: 0.1
   bullet: {fileID: 6742282492129939399, guid: 1d1254b514deb324982d9ceb860646de, type: 3}
   gun: {fileID: 1364563867}
+  gunLeft: {fileID: 1771725285}
+  gunRight: {fileID: 1963818799}
+  twoGuns: 0
 --- !u!61 &1755350821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1020,6 +1026,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1771725284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1771725285}
+  m_Layer: 0
+  m_Name: GunLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1771725285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771725284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.362, y: -0.095, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755350819}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1961130415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1104,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1963818798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963818799}
+  m_Layer: 0
+  m_Name: GunRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963818799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963818798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36, y: -0.105, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1755350819}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &627745789318600234
 PrefabInstance:

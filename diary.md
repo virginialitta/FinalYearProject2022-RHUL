@@ -73,3 +73,9 @@ I was not able to work on my project as much as I had wanted to during the first
  - ***Week 25*** 
     - *Tuesday, 20:49* - Implemented an initial power up system. So far, the two implemented power ups are a shield power up and a plus-one-life power up. The former grants the player a shield which makes it invulnerable to enemy bullets for 3 seconds. This is done by having collision detection disabled while the shield is active (the spaceship sprite is also replaced by a "shielded" alternate sprite for the duration). The latter instead simply lets the player gain back one life lost. If the player already has all 3 lives nothing will happen. Working on this power up allowed me to optimise LivesManager.cs by having heart sprites set to active/inactive instead of destroying them when a life is lost.
     All power ups spawn at the top of the screen and fall down slowly. The player can "catch" them as they fall and they are equipped upon collision with the spaceship. A gun power up is also currently in the game but it cannot be equipped for now. It will allow the player to have 2 guns, increasing fire rate. A score increasing power up will be implenented as well.
+
+<br>
+
+- ***Week 26*** 
+    - *Monday, 20:14* - Finished implementing the power up system. The last two power ups are a score increaser (adds 10 to the score) and a gun power up that equips the player spaceship with two guns instead of one. Also changed the power up spawn interval so fewer power ups are spawned. To fix: the score power up can only be picked up if there are enemies on the screen, since it calls Enemy.cs and does so by searching for an object in the scene called "Enemy" and then accessing its components. Might fic this by having the power up reference Enemy.cs in a different way.
+    A sprite for the first boss has been designed and added to assets, code for it will be added to EnemySpawner.cs next.
