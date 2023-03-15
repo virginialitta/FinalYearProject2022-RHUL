@@ -23,8 +23,7 @@ public class Enemy : MonoBehaviour
         Enemy.score = 0;
         MyText.text = "Score: " + Enemy.score;
 
-
-    // Find the ScoreTxt canvas in the scene
+        // Find the ScoreTxt canvas in the scene
         GameObject scoreTextObject = GameObject.Find("ScoreTxt");
         if (scoreTextObject != null) {
             MyText = scoreTextObject.GetComponentInChildren<Text>();

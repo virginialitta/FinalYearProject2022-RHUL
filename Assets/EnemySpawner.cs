@@ -13,6 +13,11 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        SpawnEnemy();
+    }
+
+    void SpawnEnemy() {
+
         Vector3 startingPosition = transform.position;
 
         for (int row = 0; row < numRows; row++)
@@ -23,5 +28,6 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(Enemy1, position, Quaternion.identity);
             }
         }
+        
     }
 }
