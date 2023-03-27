@@ -77,7 +77,20 @@ I was not able to work on my project as much as I had wanted to during the first
 <br>
 
 - ***Week 26*** 
-    - *Monday, 20:14* - Finished implementing the power up system. The last two power ups are a score increaser (adds 10 to the score) and a gun power up that equips the player spaceship with two guns instead of one. Also changed the power up spawn interval so fewer power ups are spawned. To fix: the score power up can only be picked up if there are enemies on the screen, since it calls Enemy.cs and does so by searching for an object in the scene called "Enemy" and then accessing its components. Might fic this by having the power up reference Enemy.cs in a different way.
+    - *Monday, 20:14* - Finished implementing the power up system. The last two power ups are a score increaser (adds 10 to the score) and a gun power up that equips the player spaceship with two guns instead of one. Also changed the power up spawn interval so fewer power ups are spawned. To fix: the score power up can only be picked up if there are enemies on the screen, since it calls Enemy.cs and does so by searching for an object in the scene called "Enemy" and then accessing its components. Might fix this by having the power up reference Enemy.cs in a different way.
     A sprite for the first boss has been designed and added to assets, code for it will be added to EnemySpawner.cs next.
 
     - *Wednesday, 18:58* - Tried to implement the boss spawning. A lot of trial and error but I still have not found a good way to do this. I have tried classifying enemies by enemy type and having switch cases for each type (i.e. once no more enemies of type "Basic" where detected in the scene, switch to spawn enemies of type "Boss"). This overcomplicated the Enemy.cs and EnemySpawner.cs way too much and did not seem to work. I am now trying an approach by creating a different class for spawning the boss. The enemy type mechanic might need to be reimplemented cause the boss is currently not spawing at the correct time.
+
+<br>
+
+- ***Week 27***
+    - *Thursday, 15:27* - I have been away from my main computer, hence I have only been able to work on sprites for new enemies and possibly different bullets. These will probably be committed and effectively added to the game next week once I am back.
+
+<br>
+
+- ***Week 28***
+    - *Monday, 08:00* - Completed the boss implementation: the solution to my problem was so much simpler than I thought (as it usually happens...), I just needed to make the BossSpawner count the amount of objects with the "Enemy" tag or "Boss" tag (not to spawn infinite bosses) and then run the SpawnBoss() method. The boss now moves like the enemies but shoots 3 bullets at a time in a cone every 5 seconds, and has 50 hp.
+    Also fixed the score power up issues by making a separate score manager script, so the score updates are no longer dependent on the enemy script.
+    Finally, made a few tweaks to the game in general, like bullet cooldowns and sprites, small enemies hp, power up durations, etc... to improve playability.
+    Designs from last week have been added to the assets. Also started setting up a possible "character select screen". Not sure if I will actually implement that as it seems like it would be a little complicated when switching to the shielded spaceship sprite.

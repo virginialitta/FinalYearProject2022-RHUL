@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,26 +11,17 @@ public class Enemy : MonoBehaviour
     public Transform gun1;
     public int hp;
     public float timer = 0f;
-    public static int score;
     public float leftBound = -10.0f;
     public float rightBound = 10.0f;
     private bool movingRight = true;
-    public Text MyText;
-    public bool scoreUp;
+    ScoreManager scoremanager;
     
     // Start is called before the first frame update
     void Start()
     {
-        Enemy.score = 0;
-        MyText.text = "Score: " + Enemy.score;
-
-        // Find the ScoreTxt canvas in the scene
-        GameObject scoreTextObject = GameObject.Find("ScoreTxt");
-        if (scoreTextObject != null) {
-            MyText = scoreTextObject.GetComponentInChildren<Text>();
-
         bulletCooldown = shootTimer;
-        }
+        GameObject gamemanager = GameObject.Find("GameManager");
+        scoremanager = gamemanager.GetComponent<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -63,7 +55,7 @@ public class Enemy : MonoBehaviour
         {
             speed *= 1.25f;
             timer = 0f;
-        }       
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -74,11 +66,9 @@ public class Enemy : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                Enemy.score++;
+                scoremanager.Enemy1Score();
                 Die();
             }
-
-            MyText.text = "Score: " + Enemy.score;
         }
     }
 
@@ -95,11 +85,6 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-    }
-
-    public void ScoreUp() {
-        Enemy.score += 10;
-        MyText.text = "Score: " + Enemy.score;
     }
 
 }
