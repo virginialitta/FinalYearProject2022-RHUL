@@ -304,6 +304,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &472775736 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2496744051648198490, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
+  m_PrefabInstance: {fileID: 5841749580330960458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &484411612
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,11 +890,11 @@ MonoBehaviour:
   plusone: {fileID: 1275673060340732899, guid: c46caaa43027fc84abe769f30189b419, type: 3}
   gun: {fileID: 690309990827765823, guid: 9d570c8248d6d35498b7a52857c08f10, type: 3}
   score: {fileID: 4535188454885019749, guid: a5d5415d5f6364645bd7766c486faf98, type: 3}
-  spawnInterval: 10
-  minX: -10
-  maxX: 10
-  minY: -10
-  maxY: 10
+  spawnInterval: 8
+  minX: -5
+  maxX: 5
+  minY: -5
+  maxY: 5
 --- !u!4 &1668057439
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCooldown: 0.1
-  bullet: {fileID: 6742282492129939399, guid: 1d1254b514deb324982d9ceb860646de, type: 3}
+  bullet: {fileID: 775181103456473795, guid: 124f76526c5a5bb448880dac1eb4bb8e, type: 3}
   gun: {fileID: 1364563867}
   gunLeft: {fileID: 1771725285}
   gunRight: {fileID: 1963818799}
@@ -1112,8 +1123,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1961130417}
   - component: {fileID: 1961130416}
+  - component: {fileID: 1961130418}
   m_Layer: 0
-  m_Name: LivesManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,6 +1162,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1961130418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961130415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc9da6c7d6317749b0b26744bbbf161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyText: {fileID: 472775736}
+  scoreUp: 0
 --- !u!1 &1963818798
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 4.311
+      value: 6.3923
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1319,7 +1345,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -7.2
+      value: -6.5756
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_AnchoredPosition.y

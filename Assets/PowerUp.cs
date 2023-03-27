@@ -29,7 +29,7 @@ public class PowerUp : MonoBehaviour
         Spaceship spaceship = player.GetComponent<Spaceship>();
         LivesManager livesmanager = GameObject.FindObjectOfType<LivesManager>();
         ShipGuns shipguns = GameObject.FindObjectOfType<ShipGuns>();
-        Enemy enemy = GameObject.FindObjectOfType<Enemy>();
+        ScoreManager scoremanager = GameObject.FindObjectOfType<ScoreManager>();
         switch (powerUpType)
         {
             case PowerUpType.Shield:
@@ -46,7 +46,7 @@ public class PowerUp : MonoBehaviour
                 break;
             case PowerUpType.ScoreUp:
                 // Activate score power-up
-                enemy.ScoreUp();
+                scoremanager.ScoreUp();
                 break;
         }
     }

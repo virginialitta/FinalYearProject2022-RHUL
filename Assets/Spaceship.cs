@@ -61,7 +61,7 @@ public class Spaceship : MonoBehaviour
 
     IEnumerator ShieldDuration()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         GetComponent<Collider2D>().enabled = true;
         shieldedSpaceship.SetActive(false);
         shieldActive = false;
