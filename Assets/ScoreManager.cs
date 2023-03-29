@@ -5,38 +5,65 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static int score;
-    public Text MyText;
+    public int score;
+    public int highScore;
+    public Text scoretxt;
     public bool scoreUp;
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        MyText.text = "Score: " + score;
+        scoretxt.text = "Score: " + score;
 
         // Find the ScoreTxt canvas in the scene
         GameObject scoreTextObject = GameObject.Find("ScoreTxt");
         if (scoreTextObject != null) 
         {
-            MyText = scoreTextObject.GetComponentInChildren<Text>();
+            scoretxt = scoreTextObject.GetComponentInChildren<Text>();
         }
+
+        highScore = PlayerPrefs.GetInt("HighScore");
+        
+    }
+    
+    void Update() {}
+
+    public void AddScore(int value)
+    {
+        score += value;
+        if (score > highScore)
+        {
+            highScore = score;
+            PlayerPrefs.SetInt("HighScore", highScore);
+        }
+
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.Save();
+
+        scoretxt.text = "Score: " + score;
     }
 
-    // Update is called once per frame
     public void Enemy1Score()
     {
-        score += 1;
-        MyText.text = "Score: " + score;
+        AddScore(1);
+        scoretxt.text = "Score: " + score;
     }
 
     public void Boss1Score()
     {
-        score += 50;
-        MyText.text = "Score: " + score;
+        AddScore(50);
+        scoretxt.text = "Score: " + score;
+    }
+
+    public void Boss2Score()
+    {
+        AddScore(100);
+        scoretxt.text = "Score: " + score;
     }
 
     public void ScoreUp() {
-        score += 10;
-        MyText.text = "Score: " + score;
+        AddScore(10);
+        scoretxt.text = "Score: " + score;
     }
 }

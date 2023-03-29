@@ -304,17 +304,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &472775736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2496744051648198490, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
-  m_PrefabInstance: {fileID: 5841749580330960458}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &484411612
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,6 +635,17 @@ RectTransform:
   m_AnchoredPosition: {x: -448.774, y: -261.01}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &625789966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2496744051648198490, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
+  m_PrefabInstance: {fileID: 5841749580330960458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &630541597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 627745788688096055, guid: 7841423432606c748bb9a38b271b69e5, type: 3}
@@ -762,6 +762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Boss1: {fileID: 4334710614833195672, guid: 260b775d3ed289e4f98155638936c4a7, type: 3}
+  Boss2: {fileID: 5926794471256717887, guid: 0287cf2cad8a3774c8dcd41b4f756d71, type: 3}
+  boss1spawned: 0
 --- !u!4 &1195866961
 Transform:
   m_ObjectHideFlags: 0
@@ -807,6 +809,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy1: {fileID: 5369710050979193791, guid: 5720096865fda514a9f45cfe1d8f9a0b, type: 3}
+  Enemy2: {fileID: 3794543860260269671, guid: ee794afd0b403ee4da15c9a51dfe127a, type: 3}
+  Enemy3: {fileID: 6656465439863359777, guid: f71bb6746a3b63c44af70a0d2a51d8fa, type: 3}
   numRows: 2
   numColumns: 10
   horizontalSpacing: 2
@@ -1174,7 +1178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc9da6c7d6317749b0b26744bbbf161, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyText: {fileID: 472775736}
+  score: 0
+  highScore: 0
+  scoretxt: {fileID: 625789966}
   scoreUp: 0
 --- !u!1 &1963818798
 GameObject:
@@ -1345,7 +1351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -6.5756
+      value: -7.26
       objectReference: {fileID: 0}
     - target: {fileID: 2496744051648198497, guid: 1669f050fa6d75d4c8d05990ae07421f, type: 3}
       propertyPath: m_AnchoredPosition.y
