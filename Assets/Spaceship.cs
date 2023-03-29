@@ -36,7 +36,7 @@ public class Spaceship : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("FireEnemyBullet"))
+        if (collision.gameObject.CompareTag("FireEnemyBullet"))
         {
             if (!shieldActive) {
                 lives--;
@@ -46,6 +46,12 @@ public class Spaceship : MonoBehaviour
                 }
             }
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss")) 
+        {
+            Destroy(gameObject);
+            SceneManager.LoadScene("GameOverScreen");
         }
     }
 

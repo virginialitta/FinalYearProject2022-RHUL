@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss : MonoBehaviour
+public class Boss2 : MonoBehaviour
 {
     public float speed, shootTimer, bulletCooldown;
     public GameObject bullet;
     public Transform bossGun1;
+    public Transform bossGun2;
     public int hp;
     public float timer = 0f;
     public static int score;
@@ -70,20 +71,17 @@ public class Boss : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                scoremanager.Boss1Score();
+                scoremanager.Boss2Score();
                 Die();
-                enemyspawner.SpawnEnemy2();
+                enemyspawner.SpawnEnemy3();
             }
         }
     }
 
     void Shoot() 
     {
-        for (int i = 0; i < 3; i++)
-        {
-            float angle = (i - 1) * 60 + 180; // Creates the cone pattern, +180 to maintain downward direction
-            GameObject.Instantiate(bullet, bossGun1.position, Quaternion.Euler(0,0,angle));
-        }
+        GameObject.Instantiate(bullet, bossGun1.position, Quaternion.Euler(0,0,-180f));
+        GameObject.Instantiate(bullet, bossGun2.position, Quaternion.Euler(0,0,-180f));
     }
 
     void Die()

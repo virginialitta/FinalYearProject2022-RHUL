@@ -77,8 +77,7 @@ public class Enemy : MonoBehaviour
         if (Random.Range(0, 10) == 1)
         {
             // newBullet needs to be created to stop the enemy from shooting itself
-            GameObject newBullet = GameObject.Instantiate(bullet, gun1.position, Quaternion.Euler(0,0,-180f));
-            newBullet.transform.tag = "Enemy";
+            GameObject.Instantiate(bullet, gun1.position, Quaternion.Euler(0,0,-180f));
         }
     }
 
