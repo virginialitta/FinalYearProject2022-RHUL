@@ -763,7 +763,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Boss1: {fileID: 4334710614833195672, guid: 260b775d3ed289e4f98155638936c4a7, type: 3}
   Boss2: {fileID: 5926794471256717887, guid: 0287cf2cad8a3774c8dcd41b4f756d71, type: 3}
+  Boss3: {fileID: 7034163234742233586, guid: c5f5112c83c9868478ce33450542345b, type: 3}
   boss1spawned: 0
+  boss2spawned: 0
 --- !u!4 &1195866961
 Transform:
   m_ObjectHideFlags: 0
@@ -970,6 +972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   lives: 0
+  shieldActive: 0
   shieldedSpaceship: {fileID: 630541597}
 --- !u!212 &1755350818
 SpriteRenderer:
