@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // This script handles the behaviour of boss objects
-public class Boss2 : MonoBehaviour
+public class Boss3 : MonoBehaviour
 {
     // Public variables that can be set in the inspector
     public float speed, shootTimer, bulletCooldown;
     public GameObject bullet;
     public Transform bossGun1;
     public Transform bossGun2;
+    public Transform bossGun3;
     public int hp;
     public float timer = 0f;
     public static int score;
@@ -56,7 +58,9 @@ public class Boss2 : MonoBehaviour
                 transform.position = new Vector3(rightBound, transform.position.y, transform.position.z);
                 transform.position = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
             }
-        } else {
+        }     
+        else 
+        {
             transform.position = transform.position + new Vector3(-1, 0, 0) * speed * Time.deltaTime;
             if (transform.position.x <= leftBound) {
                 movingRight = true;
@@ -86,19 +90,17 @@ public class Boss2 : MonoBehaviour
             hp--;
             if (hp <= 0)
             {
-                // Increase the score and spawn a new enemy when the boss is defeated
-                scoremanager.Boss2Score();
+                // Increase the score and display the victory screen when the boss is defeated
+                scoremanager.Boss3Score();
                 Die();
-                enemyspawner.SpawnEnemy3();
+                SceneManager.LoadScene("Victory Screen");
             }
         }
     }
 
-    // Shoots two parallel bullets
     void Shoot() 
     {
-        GameObject.Instantiate(bullet, bossGun1.position, Quaternion.Euler(0,0,-180f));
-        GameObject.Instantiate(bullet, bossGun2.position, Quaternion.Euler(0,0,-180f));
+        //todo
     }
 
     // Destroys the boss object

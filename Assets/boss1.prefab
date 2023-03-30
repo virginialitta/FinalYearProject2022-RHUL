@@ -131,7 +131,7 @@ MonoBehaviour:
   bulletCooldown: 0
   bullet: {fileID: 3701592296076082203, guid: 8cdb47f1b009cfd4e94bb25f77197d9f, type: 3}
   bossGun1: {fileID: 4334710615969069391}
-  hp: 50
+  hp: 70
   timer: 0
   leftBound: -10
   rightBound: 10
