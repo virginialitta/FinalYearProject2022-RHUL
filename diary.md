@@ -54,7 +54,7 @@ I was not able to work on my project as much as I had wanted to during the first
 
  - ***Week 23*** 
     - *Sunday, 19:42* - Refactored the enemy movement code to make it more readable and make the moving smoother. Fixed the issues with the score not updating/displaying as well as the player spaceship not being destroyed on collision. Turns out, with the spaceship being a kinematic body, collisions were not being registered correctly; this was fixed by enabling "On Trigger" for the spaceship game object. The score was not getting updated on collision because I currently have multiple duplicated of the enemy game object, hence the score was set to 0 for all and kept resetting to that upon collision of one. This was fixed by making the score variable static. However, this enemy system will need to be changed to prefabs instead of multiple entities to simplify and to take up less memory.
-    This work was done slowly ober the course of multiple weeks as I have been busy with other modules.
+    This work was done slowly over the course of multiple weeks as I have been busy with other modules.
 
 
 <br>
@@ -101,3 +101,5 @@ I was not able to work on my project as much as I had wanted to during the first
 
     - *Thursday, 10:50* - Last day... All current code has been commented and cleaned up, added a "quit game" button and some visual things to the start screen, created a victory screen and the final boss now spawns after the third wave. The draft of the final report is almost complete (~11k words written). To do: finish the final boss implementation, complete missing sections in the report (development final part, add all new classes, complete visual design with sprites, conclusion and self evaluation), figure out export and installation of the game, make the demo video, have some coffee.
     Unfortunately I think the character selection will remained unimplemented, as I do not think I will have enough time to test it and I would much rather have a fully functioning program, even if with less features. It will however be mentioned in the report. 
+    
+    - *Thursday, 10:50* - Finally finished! The final boss has been implemented with a unique attack pattern that features two different bullet types, all sprites and their box colliders have been sized correctly, enemy attacks have been timed better and an icon for the game has been designed. Code should be clean and commented, unfortunately the character select mechanic could not be implemented. Now to finish writing the report and make the UML diagram and the readme file.

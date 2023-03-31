@@ -207,7 +207,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &2686044298333161506
 MonoBehaviour:
@@ -222,9 +222,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  shootTimer: 0
-  bulletCooldown: 0
-  bullet: {fileID: 3701592296076082203, guid: 8cdb47f1b009cfd4e94bb25f77197d9f, type: 3}
+  shootTimer1: 1
+  shootTimer2: 4
+  bulletCooldown1: 0
+  bulletCooldown2: 0
+  bulletSpeed: 2
+  bullet1: {fileID: 8607636273609455501, guid: 2c06054e85f3fe54498bef478bc489a6, type: 3}
+  bullet2: {fileID: 2441379485451507683, guid: aeef592ff6cf3de4cbfa33a21849fbe7, type: 3}
   bossGun1: {fileID: 5179500131373438366}
   bossGun2: {fileID: 4482052968445896592}
   bossGun3: {fileID: 1767598431634669199}

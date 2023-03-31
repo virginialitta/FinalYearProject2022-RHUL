@@ -68,7 +68,7 @@ public class BossSpawner : MonoBehaviour
     // Spawns the final boss at a fixed position
     public void SpawnBoss3()
     {
-            Vector3 position = new Vector3(0f, 4f, 0f);
+            Vector3 position = new Vector3(0f, 3f, 0f);
             Instantiate(Boss3, position, Quaternion.identity);
     }
 }
